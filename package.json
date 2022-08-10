@@ -1,0 +1,22 @@
+{
+  "name": "pusher-poll",
+  "version": "1.0.0",
+  "description": "realtime pull poll vote",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev":"nodemon index.js"
+  },
+  "author": "Zanaty",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "pusher": "^5.1.1-beta"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}

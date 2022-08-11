@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -11,8 +12,74 @@
     <title>PusherPoll</title>
   </head>
   <body>
-    <h1>Food Votes</h1>
+    <div class="container">
+      <h1>Food Votes</h1>
+      <p>Vote for your favorite food</p>
+      <form id="vote-form">
+        <p>
+          <label for="pizza">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="pizza"
+              value="Pizza"
+            />
+            <span> Pizza</span>
+          </label>
+        </p>
+        <p>
+          <label for="pasta">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="pasta"
+              value="Pasta"
+            />
+            <span> Pasta</span>
+          </label>
+        </p>
+        <p>
+          <label for="burger">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="burger"
+              value="Burger"
+            />
+            <span> Burger</span>
+          </label>
+        </p>
+        <p>
+          <label for="other">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="other"
+              value="Other"
+            />
+            <span> Somthing else</span>
+          </label>
+        </p>
+        <input type="submit" value="Vote" class="btn" />
+      </form>
 
+      <br /><br />
+
+      <div id="chartContaimer" style="height: 300px; width: 100%"></div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/7.3.0/pusher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

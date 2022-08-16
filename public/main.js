@@ -51,7 +51,6 @@ fetch("http://localhost:3000/poll")
     const chartContainer = document.querySelector("#chartContainer");
 
     if (chartContainer) {
-      // Listen for the event.
       document.addEventListener("votesAdded", function (e) {
         document.querySelector(
           "#chartTitle"
@@ -70,9 +69,8 @@ fetch("http://localhost:3000/poll")
       });
       chart.render();
 
-      var pusher = new Pusher("355bbcc1238451dd1d93", {
-        cluster: "ap2",
-        encrypted: true,
+      var pusher = new Pusher("c2d7bcc41df5a6ff88f1", {
+        cluster: "eu",
       });
 
       var channel = pusher.subscribe("food-poll");

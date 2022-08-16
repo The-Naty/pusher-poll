@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <title>PusherPoll</title>
     <style>
@@ -31,29 +31,53 @@
       </div>
       <form id="vote-form">
         <p>
-          <label>
-            <input type="radio" name="food" id="pizza" value="Pizza" />
-            <span for="pizza">Pizza</span>
+          <label for="pizza">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="pizza"
+              value="Pizza"
+            />
+            <span> Pizza</span>
           </label>
         </p>
 
         <p>
-          <label>
-            <input type="radio" name="food" id="pasta" value="Pasta" />
-            <span for="pasta">Pasta</span>
+          <label for="pasta">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="pasta"
+              value="Pasta"
+            />
+            <span> Pasta</span>
           </label>
         </p>
 
         <p>
-          <label>
-            <input type="radio" name="food" id="burger" value="Burger" />
-            <span for="burger">Burger</span>
+          <label for="burger">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="burger"
+              value="Burger"
+            />
+            <span> Burger</span>
           </label>
         </p>
         <p>
-          <label>
-            <input type="radio" name="food" id="other" value="Other" />
-            <span for="other">Something else</span>
+          <label for="other">
+            <input
+              name="food"
+              type="radio"
+              class="with-gap"
+              id="other"
+              value="Other"
+            />
+            <span> Somthing else</span>
           </label>
         </p>
         <input type="submit" value="Vote" class="btn" />

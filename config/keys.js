@@ -5,5 +5,4 @@ module.exports = {
   pusherKey: "c2d7bcc41df5a6ff88f1",
   pusherSecret: "fc500a9a4e1fc18b494b",
   pusherCluster: "eu",
-  pusherEncrypted: true,
 };

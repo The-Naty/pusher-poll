@@ -70,9 +70,6 @@ fetch("http://localhost:3000/poll")
       });
       chart.render();
 
-      // Enable pusher logging - don't include this in production
-      Pusher.logToConsole = true;
-
       var pusher = new Pusher("355bbcc1238451dd1d93", {
         cluster: "ap2",
         encrypted: true,
@@ -85,11 +82,10 @@ fetch("http://localhost:3000/poll")
           if (point.label == data.food) {
             point.y += data.points;
             totalVotes += data.points;
-            event = new CustomEvent("votesAdded", {
+            e = new CustomEvent("votesAdded", {
               detail: { totalVotes: totalVotes },
             });
-            // Dispatch the event.
-            document.dispatchEvent(event);
+            document.dispatchEvent(e);
           }
         });
         chart.render();

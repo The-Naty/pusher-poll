@@ -1,26 +1,39 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
-const Pusher = require("pusher");
+const Vote = require('../models/Vote');
 
-const pusher = new Pusher({
-  app_id: "1461010",
-  key: "c2d7bcc41df5a6ff88f1",
-  secret: "fc500a9a4e1fc18b494b",
-  cluster: "eu",
+const Pusher = require('pusher');
+
+const keys = require('../config/keys');
+
+var pusher = new Pusher({
+  appId: keys.pusherAppId,
+  key: keys.pusherKey,
+  secret: keys.pusherSecret,
+  cluster: keys.pusherCluster,
+  encrypted: keys.pusherEncrypted
 });
 
-router.get("/", (req, res) => {
-  res.send("POLL");
+router.get('/', (req, res) => {
+  Vote.find().then(votes => res.json({ success: true, votes: votes }));
 });
 
-router.post("/", (req, res) => {
-  pusher.trigger("food-poll", "food-vote", {
-    points: 1,
-    food: req.body.food,
+router.post('/', (req, res) => {
+  const newVote = {
+    os: req.body.os,
+    points: 1
+  };
+
+  new Vote(newVote).save().then(vote => {
+    pusher.trigger('os-poll', 'os-vote', {
+      points: parseInt(vote.points),
+      os: vote.os
+    });
+
+    return res.json({ success: true, message: 'Thank you for voting' });
   });
-
-  return res.json({ success: true, message: "Thank you for voting!!" });
 });
 
 module.exports = router;

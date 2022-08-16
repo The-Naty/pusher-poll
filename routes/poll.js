@@ -5,8 +5,8 @@ const Pusher = require("pusher");
 
 const pusher = new Pusher({
   app_id: "1461010",
-  key: "eff0f06435b3cf81b22f",
-  secret: "ef2b979e9699a977aeb9",
+  key: "c2d7bcc41df5a6ff88f1",
+  secret: "fc500a9a4e1fc18b494b",
   cluster: "eu",
 });
 

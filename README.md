@@ -15,5 +15,5 @@ npm run dev
 npm start
 ```
 
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![This is an image]([https://myoctocat.com/assets/images/base-octocat.svg](https://github.com/The-Naty/pusher-poll/blob/main/readmeimg/Untitled.png))
 
